@@ -763,4 +763,39 @@ section {
 .bg-success-light { background-color: #e8f8ec; }
 .bg-warning-light { background-color: #fff9e6; }
 .bg-info-light { background-color: #eaf6ff; }
-.bg-danger-light { background-color: #fdf0f0; }
+.bg-danger-light { background-color: #fdf0f0; }
+/* Botones de acción en tarjetas de productos */
+.products .member .member-info {
+  padding: 18px 15px;
+}
+
+.btn-ver-detalle {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ver-detalle:hover {
+  background-color: #08961b;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(8, 150, 27, 0.25);
+}
+
+/* Modales y vistas del panel */
+.craft-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.btn-action-pill {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.status-badge-filter.active {
+  background-color: #08961b !important;
+  color: #ffffff !important;
+  border-color: #08961b !important;
+}
