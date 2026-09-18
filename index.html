@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Artesanías de Nuestra Tierra</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Content/favicon.png" rel="icon">
+  <link href="assets/img/Content/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="logo me-2"><img src="assets/img/Content/logo.png" alt="Logo Artesanías"></a>
+        <h1 class="logo mb-0"><a href="index.html">Artesanías de Nuestra Tierra<span>.</span></a></h1>
+      </div>
+      
+      <div class="d-flex align-items-center gap-3">
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+            <li><a class="nav-link scrollto" href="#productos">Productos</a></li>
+            <li><a class="nav-link scrollto" href="#nosotros">Sobre Nosotros</a></li>
+            <li id="panelNavLink" class="d-none"><a class="nav-link scrollto" href="#panel-artesano">Mi Panel</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+        <!-- Botón circular de Login en esquina superior derecha -->
+        <div class="user-action-area">
+          <button id="userAuthBtn" class="user-circle-btn" type="button" title="Acceso de usuarios" aria-label="Iniciar sesión">
+            <i class="bi bi-person-fill" id="userIcon"></i>
+            <span class="user-status-dot" id="userStatusDot" title="Desconectado"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1><span>¡Bienvenidos a </span></h1>
+      <h2>"Artesanías de Nuestra Tierra"!</h2>
+      <div class="d-flex gap-2">
+        <a href="#about" class="btn-get-started scrollto">Cambiar Color</a>
+        <button id="heroLoginBtn" class="btn-outline-custom">Área Artesanos</button>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Panel de Control Artesanal (Se muestra tras Login) ======= -->
+    <section id="panel-artesano" class="user-dashboard-section d-none">
+      <div class="container">
+        <div class="dashboard-card">
+          <!-- Cabecera del Panel -->
+          <div class="dashboard-header d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom">
+            <div class="d-flex align-items-center gap-3 mb-2 mb-md-0">
+              <div class="dashboard-avatar" id="dashAvatarInitial">A</div>
+              <div>
+                <span class="badge rounded-pill bg-success-subtle text-success border border-success-subtle mb-1" id="dashUserRole">Rol de Usuario</span>
+                <h3 class="mb-0" id="dashUserName">Nombre de Usuario</h3>
+                <small class="text-muted" id="dashUserEmail">correo@artesanias.com</small>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <span class="badge bg-light text-dark d-flex align-items-center px-3 py-2 border">
+                <i class="bi bi-shield-check text-success me-1"></i> Sesión Activa
+              </span>
+              <button id="logoutBtn" class="btn btn-outline-danger btn-sm d-flex align-items-center gap-1">
+                <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+              </button>
+            </div>
+          </div>
+
+          <!-- Métricas del Panel -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-lg-3">
+              <div class="metric-card p-3 rounded-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="metric-title text-muted small">Catálogo Activo</div>
+                    <div class="metric-value fs-3 fw-bold text-dark" id="statProducts">4</div>
+                  </div>
+                  <div class="metric-icon bg-success-light text-success">
+                    <i class="bi bi-basket3-fill"></i>
+                  </div>
+                </div>
+                <div class="metric-foot small text-success mt-2">
+                  <i class="bi bi-arrow-up-short"></i> 100% en vitrina
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="metric-card p-3 rounded-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="metric-title text-muted small">Pedidos Locales</div>
+                    <div class="metric-value fs-3 fw-bold text-dark" id="statOrders">18</div>
+                  </div>
+                  <div class="metric-icon bg-warning-light text-warning">
+                    <i class="bi bi-bag-check-fill"></i>
+                  </div>
+                </div>
+                <div class="metric-foot small text-muted mt-2">
+                  Boyacá &amp; Cundinamarca
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="metric-card p-3 rounded-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="metric-title text-muted small">Visitas al Taller</div>
+                    <div class="metric-value fs-3 fw-bold text-dark">452</div>
+                  </div>
+                  <div class="metric-icon bg-info-light text-info">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                </div>
+                <div class="metric-foot small text-success mt-2">
+                  <i class="bi bi-graph-up-arrow"></i> +24% este mes
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="metric-card p-3 rounded-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="metric-title text-muted small">Valoración</div>
+                    <div class="metric-value fs-3 fw-bold text-dark">4.9/5</div>
+                  </div>
+                  <div class="metric-icon bg-danger-light text-danger">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <div class="metric-foot small text-muted mt-2">
+                  Calidad artesanal certificada
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actividades / Acciones del Panel -->
+          <div class="row g-3">
+            <div class="col-lg-8">
+              <div class="p-3 bg-white rounded-3 border">
+                <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-clock-history text-success"></i> Estado Reciente de Producción
+                </h5>
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0 small">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Pieza</th>
+                        <th>Origen</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                      </tr>
+                    </thead>
+                    <tbody id="panelTableBody">
+                      <tr>
+                        <td><strong>Tapete en Fique</strong></td>
+                        <td>Boyacá</td>
+                        <td><span class="badge bg-success">En exhibición</span></td>
+                        <td><button class="btn btn-sm btn-outline-secondary py-0">Detalles</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Manilla de Mostacilla</strong></td>
+                        <td>Cundinamarca</td>
+                        <td><span class="badge bg-success">En exhibición</span></td>
+                        <td><button class="btn btn-sm btn-outline-secondary py-0">Detalles</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Vasija de Barro Cocido</strong></td>
+                        <td>Ráquira, Boyacá</td>
+                        <td><span class="badge bg-warning text-dark">En horneado</span></td>
+                        <td><button class="btn btn-sm btn-outline-secondary py-0">Gestionar</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="p-3 bg-white rounded-3 border h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h5 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-lightning-charge-fill text-warning"></i> Operaciones Rápidas
+                  </h5>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-sm btn-outline-success text-start" onclick="alert('Función de registro de nueva pieza artesanal habilitada para el catálogo.')">
+                      <i class="bi bi-plus-circle me-1"></i> Registrar Nueva Artesanía
+                    </button>
+                    <button class="btn btn-sm btn-outline-primary text-start" onclick="alert('Generando reporte en formato imprimible de la producción local.')">
+                      <i class="bi bi-file-earmark-text me-1"></i> Descargar Reporte de Taller
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary text-start" onclick="document.querySelector('#productos').scrollIntoView({behavior:'smooth'})">
+                      <i class="bi bi-eye me-1"></i> Ver Catálogo Público
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-3 p-2 bg-light rounded text-muted small text-center">
+                  Servidor Cloud Activo &bull; Sincronizado
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Panel Artesanal -->
+
+    <!-- ======= products Section ======= -->
+    <section id="productos" class="products section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>productos</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Content/1.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Tapete</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Content/2.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Manilla</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Content/3.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Muñeco tejido</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Content/4.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Artesania de barro</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End products Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="nosotros" class="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title" id="sobre-nosotros">
+          <h2 id="tituloNosotros">Sobre Nosotros</h2>
+          <h3 id="tituloBienvenida">¡Bienvenidos a "Artesanías de Nuestra Tierra"!</h3>
+          <br>
+          <div id="textoOculto" style="display: none;">
+            <p>Descubre la belleza y el encanto de las artesanías de Boyacá y Cundinamarca en nuestro sitio web. En "Artesanías de Nuestra Tierra" nos enorgullece ofrecerte una amplia selección de productos únicos y auténticos, elaborados con pasión y dedicación por talentosos artesanos locales.</p>
+            <p>Explora nuestro catálogo virtual y déjate cautivar por la riqueza cultural y la historia que se reflejan en cada pieza. Desde tejidos tradicionales y cerámica artesanal hasta joyería finamente elaborada y esculturas impresionantes, tenemos algo especial para todos los amantes del arte y la artesanía.</p>
+            <p>Con "Artesanías de Nuestra Tierra", apoyas directamente a las comunidades locales y contribuyes al fomento de la cultura y el patrimonio de nuestra región. Además, disfruta de una experiencia de compra segura y conveniente, con envíos rápidos y atención personalizada.</p>
+            <p>¡Embárcate en un viaje de descubrimiento y encuentra tu próxima joya artesanal en "Artesanías de Nuestra Tierra" hoy mismo!</p>
+          </div>
+          <br>
+          <button id="mostrarOcultar" class="boton-desplegable">Mostrar/Ocultar Texto</button>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top" id="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Acerca de</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+              <a href="https://www.facebook.com" class="facebook"><h4>Facebook</h4></a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <a href="https://www.linkedin.com" class="linkedin" ><h4>linkedin</h4></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright 2024<strong><span> Artesanias de Nuestra Tierra</span></strong>. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- ======= Modal de Login ======= -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content auth-modal-content shadow-lg border-0">
+        <div class="modal-header border-0 pb-0">
+          <div class="w-100 text-center pt-2">
+            <div class="auth-icon-badge mx-auto mb-2">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <h4 class="modal-title fw-bold" id="loginModalLabel">Acceso a la Plataforma</h4>
+            <p class="text-muted small mb-0">Artesanías de Nuestra Tierra &bull; Boyacá &amp; Cundinamarca</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body px-4 py-3">
+          <!-- Alerta de Error / Feedback -->
+          <div id="loginAlert" class="alert alert-danger py-2 small d-none" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i>
+            <span id="loginAlertMsg">Credenciales inválidas.</span>
+          </div>
+
+          <!-- Selector rápido de cuentas para pruebas en Azure -->
+          <div class="quick-accounts-box mb-3 p-2 rounded-3">
+            <div class="text-muted extra-small fw-semibold mb-2 text-uppercase">
+              <i class="bi bi-key-fill text-success"></i> Cuentas de prueba para verificar:
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-sm btn-outline-success flex-fill text-start quick-fill-btn" data-user="admin">
+                <strong>Admin:</strong><br><span class="extra-small text-muted">admin@artesanias.com</span>
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-primary flex-fill text-start quick-fill-btn" data-user="artesano">
+                <strong>Artesano:</strong><br><span class="extra-small text-muted">artesano@artesanias.com</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Formulario de Login -->
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label small fw-semibold">Correo Electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0"><i class="bi bi-envelope text-muted"></i></span>
+                <input type="email" class="form-control border-start-0 ps-0" id="loginEmail" placeholder="ejemplo@artesanias.com" required autocomplete="username">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label small fw-semibold">Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock text-muted"></i></span>
+                <input type="password" class="form-control border-start-0 ps-0" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+                <button class="btn btn-outline-secondary border-start-0" type="button" id="togglePasswordBtn" title="Ver contraseña">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label small text-muted" for="rememberMe">Recordar sesión</label>
+              </div>
+              <small><a href="#contacto" class="text-success text-decoration-none" onclick="alert('Contacta al administrador en Boyacá o Cundinamarca para restablecer tus credenciales.');">¿Olvidaste tu clave?</a></small>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 py-2 fw-semibold btn-auth-submit">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar Sesión
+            </button>
+          </form>
+        </div>
+
+        <div class="modal-footer border-0 pt-0 pb-3 justify-content-center">
+          <small class="text-muted">Servidor Seguro &bull; Protocolo HTTPS / SSH</small>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal Login -->
+
+  <div id="preloader"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  </body>
+
+</html>
